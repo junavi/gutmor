@@ -1,2 +1,2 @@
 # gutmor
-wagtail
+Con wagtail framework
