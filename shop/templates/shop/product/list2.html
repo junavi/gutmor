@@ -1,0 +1,97 @@
+{% extends "shop/base.html" %}
+{% load static %}
+
+{% block title %}
+  {% if category %}{{ category.name }}{% else %}Products{% endif %}
+{% endblock %}
+
+{% block content %}
+{% if category.id == 1 %}
+<h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">Categor&iacute;a: {{category.name}}</h1> {% endif %}
+
+{% if category.id == 2 %}
+<h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">Categor&iacute;a: {{category.name}}</h1> {% endif %}
+
+{% if category.id == 3 %}
+<h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">Categor&iacute;a: {{category.name}}</h1> {% endif %}
+{% if category.id == 4 %}
+<h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">Categor&iacute;a: {{category.name}}</h1> {% endif %}
+{% if category.id == 5 %}
+<h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">Categor&iacute;a: {{category.name}}</h1> {% endif %}
+{% if category.id == 7 %}
+<h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">Categor&iacute;a: {{category.name}}</h1> {% endif %}
+{% if category.id == 9 %}
+<h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">Categor&iacute;a: {{category.name}}</h1> {% endif %}
+{% if category.id == 10 %}
+<h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">Categor&iacute;a: {{category.name}}</h1> {% endif %}
+{% if category.id == 11 %}
+<h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">Categor&iacute;a: {{category.name}}</h1> {% endif %}
+
+<div id="sidebar" class="site-nav  p-5 ">
+  <div style=" width:220px; padding:25px 20px 0 0;" id="separator-sidebar" class="fixed left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
+    <h1  class="text-2xl font-bold tracking-tight text-gray-900">Categorias</h3>
+    <ul >
+         <li {% if not category %}class="selected"{% endif %} >
+        <a  href="{% url "shop:product_list" %}">Todas</a>
+      </li>
+      {% for c in categories %}
+        <li {% if category.slug == c.slug %}  class="selected mt-2"{% endif %}>
+          <a  href="{{ c.get_absolute_url }}">{{ c.name }}</a>
+        </li>
+      {% endfor %}
+      </ul>
+  </div>
+  </div>
+  <div class="site-nav2 mt-3 pt-3">
+
+              <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]" aria-hidden="true">
+                <div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+              </div>
+
+   <div class="container-fluid m-5 ">
+    <h1  class="text-2xl font-bold tracking-tight text-gray-900">Categorias</h3>
+    <ul>
+      <li {% if not category %}class="selected"{% endif %}>
+       <div class="inline-flex mb-2 rounded-md shadow-sm" role="group">
+             <button type="button" class="px-4 py-2 text-sm font-medium text-gray-900 bg-transparent border border-gray-900 rounded-lg hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
+         <a href="{% url "shop:product_list" %}">Todas</a>
+        </button>
+
+       </div>
+      </li>
+       {% for c in categories %}
+       <div class="inline-flex mb-2 rounded-md shadow-sm" role="group">
+        <li {% if category.slug == c.slug %}class="selected  "{% endif %}>
+         <button type="button" class=" px-4 py-2 text-sm font-medium text-gray-900 bg-transparent border border-gray-900 rounded-lg hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
+          <a class="" href="{{ c.get_absolute_url }}">{{ c.name }} </a>
+         </button>
+        </li>
+       </div>
+      {% endfor %}
+   </ul>
+    </div>
+ </div>
+  <div class="mx-auto max-w-2xl p-4 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8" >
+
+  <h1 class="mx-5 mt-3 text-2xl font-bold tracking-tight text-gray-900">{% if category %}{{ category.name }}{% else %}Productos{% endif %}</h1>
+
+  <div class="mx-5  grid grid-cols-1  md:grid-cols-4 gap-4">
+
+    {% for product in products %}
+      <div class="group relative ">
+        <div class="card rounded-md p-2 bg-white">
+         <a href="{{ product.get_absolute_url }}">
+             <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-white  lg:aspect-none group-hover:opacity-75 lg:h-80">
+              <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/ad.png" %}{% endif %}">
+          </a>
+        </div>
+        <a  href="{{ product.get_absolute_url }}" class="mt-2"><p></p> <span class="text-dark ">Cod. {{ product.id }}</span> <br><span class="text-dark">Nombre:</span> <span class="text-primary"> {{ product.name }}</span>  <br><span class="text-dark">Descripción:</span> <span class="text-muted">{{ product.description }} </span>  </a>
+        <br>
+        ${{ product.price }}
+      </div>
+      </div>
+
+    {% endfor %}
+  </div>
+  </div>
+{% endblock %}
