@@ -1,13 +1,73 @@
 {% extends 'shop/base.html' %}
 {% load static %}
 
+
 {% block content %}
 {% include 'shop/carrusel.html'%}
-  <div class="mt-5 mx-5 rounded-lg bg-gradient-to-tr from-red-100 via-blue-200 to-yellow-200 p-1">
-<div class="bg-white p-4 text-justify  tracking-tight ">
-   <span class="font-bold text-2xl ">Comecializadora Guten Morgen C. A.</span>, <span class="text-gray-400 md:text-2x1 ">es una empresa venezolana unida estrat&eacute;gicamente con un conjunto de empresas alemanas dedicadas a la comercializaci&oacute;n de Materia Prima, Aditivos Qu&iacute;micos, Repuestos y suminitros para los distintos sectores industriales a nivel nacional e internacional.</span>
+
+<div class="mt-5 ">
+
+
+
+<h1 class="mx-5 font-bold md:text-2xl text-xl ">Categor&iacute;as principales</h1>
+
+<div style="font-family: 'Comfortaa', sans-serif;" class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-5 mx-3 ">
+
+
+
+  <a href="{% url "shop:buy"%}">
+  <div  class="relative bg-stone-200 px-2 py-4 hover:bg-stone-300 hover:text-white active:bg-stone-400 focus:outline-none focus:ring focus:ring-stone-500 rounded-lg  group font-semibold">Compras
+  <div class="text-white absolute right-5 bg-stone-500 rounded-full top-4 h-10 w-10 p-2 "><span class="material-symbols-outlined">
+shopping_bag
+</span>
+
+  </div>
+  </div> </a>
+
+ <a href="{% url "shop:service"%}">
+ <div class="relative bg-sky-400 px-2 py-4 hover:bg-sky-500 hover:text-white active:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-500 rounded-lg  group font-semibold">Servicios
+  <div class="text-white absolute right-5 bg-sky-700 rounded-full top-4 h-10 w-10 p-2 "><span class="material-symbols-outlined">
+globe
+</span>
+</div></div>
+</a>
+
+
+ <a href="{% url "shop:gallery"%}">
+ <div class="relative bg-teal-400 px-2 py-4 hover:bg-teal-500 hover:text-white active:bg-teal-600 focus:outline-none focus:ring focus:ring-teal-500 rounded-lg  group font-semibold">Galer&iacute;a
+  <div class="text-white absolute right-5 bg-teal-700 rounded-full top-4 h-10 w-10 p-2 "><span class="material-symbols-outlined">
+gallery_thumbnail
+</span>
+</div></div>
+</a>
+
+<a href="{% url "shop:company"%}" >
+<div class="relative bg-blue-400 px-2 py-4 hover:bg-blue-500 hover:text-white active:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-500 rounded-lg  group font-semibold">Empresas
+  <div class="text-white absolute right-5 bg-blue-700 rounded-full top-4 h-10 w-10 p-2 ">
+<span class="material-symbols-outlined">
+inventory
+</span>
+</div></div></a>
+
 
 </div>
+
+
+<div class="mt-5 rounded-lg bg-gradient-to-tr from-red-100 via-blue-200 to-yellow-200 p-1 mx-3 ">
+<div class="bg-white p-4 text-justify  ">
+   <span class="font-bold md:text-2xl text-2xl ">Comecializadora Guten Morgen C. A.</span>,
+   <span class="text-base md:text-2xl leading-normal">Es una empresa venezolana unida
+   estrat&eacute;gicamente con un conjunto de empresas alemanas y venezolanas
+   dedicadas a la comercializaci&oacute;n de <a class="font-semibold" href="{% url 'shop:product_list'%}">materia prima</a>, <a class="font-semibold" href="{% url 'shop:product_list'%}">aditivos
+   qu&iacute;micos</a>, <a class="font-semibold" href="{% url 'shop:repuestos'%}">repuestos</a> y <a class="font-semibold" href="{% url 'shop:instrumentos' %}">suminitros</a> para los distintos sectores
+   industriales a nivel nacional e internacional. </span>
+</div>
   </div>
+
+</div>
+
+
+
+{% include 'shop/cards.html' %}
 
 {% endblock %}

@@ -1,0 +1,75 @@
+{% extends "shop/base.html" %}
+{% load static %}
+{% block content %}
+
+
+
+
+  {% for category in categories %}
+  {% if category.id == 12 %}
+    <div class="mt-5 md:mr-4  text-center sm:ml-72  rounded-md bg-gradient-to-tr from-red-100 via-blue-200 to-yellow-200 p-1 border-dashed rounded-lg dark:border-gray-700">
+<div class="bg-white p-4 text-center text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+   Categor&iacute;a: {{category.name}}
+
+</div>
+</div>
+
+  {% endif %}
+  {% endfor %}
+    <button data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar" aria-controls="default-sidebar" type="button" class="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+     <span class="sr-only">Open sidebar</span>
+   <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+   <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
+   </svg>
+</button>
+  <div style=" width:220px; padding:25px 20px 0 0;" id="default-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0 " aria-label="Sidebar">
+  <div class="h-full px-3  pb-5 overflow-y-auto bg-gray-50 dark:bg-gray-800">
+    <h1  class="mt-5 text-2xl font-bold tracking-tight text-gray-900">Categorias</h3>
+
+    <ul class="space-y-2 font-medium" >
+
+      <div class="p-2 relative overflow-x-auto">
+
+      {% for c in categories %}
+
+        <li {% if category.slug == c.slug %}  class="bg-green-50 rounded-lg"{% endif %}>
+          <a  href="{{ c.get_absolute_url }}" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">{{ c.name }}</a>
+        </li>
+
+      {% endfor %}
+
+      </ul>
+      </div>
+  </div>
+  </div>
+
+<div class="p-4 sm:ml-64">
+
+
+<table class="table items-center justify-center md:table-fixed sm:table-fixed text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400  ">
+  <tr class="bg-gray-50">
+    <th>Cod.</th>
+     <th>Nombre</th>
+    <th>Descripci&oacute;n</th>
+
+
+  </tr>
+
+    {% for product in products %}
+
+{% if product.category.id == 12 %}
+  <tr class="odd:bg-white even:bg-green-50">
+    <td >{{product.id}}</td>
+    <td>  <a href="{{ product.get_absolute_url }}">{{ product.name }}</a></td>
+    <td>{{ product.description }}</td>
+
+
+
+    {% endif %}
+  </tr>
+    {% endfor %}
+     </table>
+</div>
+
+
+{% endblock %}

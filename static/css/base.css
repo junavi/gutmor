@@ -1,9 +1,10 @@
-@import url(//fonts.googleapis.com/css?family=Ubuntu);
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Ubuntu:ital,wght@1,700&display=swap');
+
 
 body {
 
-    font-family:helvetica, sans-serif;
-
+    font-family: 'Comfortaa', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
 
 
 }
@@ -18,73 +19,9 @@ body {
 
 }
 
-h1, h2, h3, h4, h5 , h6 {
-    font-family: 'Ubuntu', sans-serif; font-weight:normal;
-}
-#sidebar {
-    width:220px;
-    padding:30px 20px 0 0;
-    float:left;
-    @media (max-width: 65rem){
-       {display: none;}
-
-       }
+h1, h2, h3, h4, h5 , h6 , p , span {
+      font-family: 'Comfortaa', sans-serif;
 }
 
-#sidebar ul{
-    margin:0px;
-    padding:0px;
-}
-
-#sidebar ul li {
-    margin:0;
-    list-style:none;
-    padding:10px 14px;
-    font-size:4px;
-}
-
-#sidebar ul li a {
-    display:block;
-}
-
-#sidebar ul li.selected {
-    background:#5993bb;
-    border-radius:4px;
-}
-
-#sidebar ul li.selected a {
-    color:#fff;
-}
-
-/* forms */
-label {
-    float:left;
-    clear:both;
-    color:#333;
-    margin-bottom:4px;
-}
-input, textarea {
-    clear:both;
-    float:left;
-    margin:0 0 10px;
-    background:#ededed;
-    border:0;
-    padding:6px 10px;
-    font-size:12px;
-}
-input[type=submit] {
-    font-weight:bold;
-    background:#00abff;
-    color:#fff;
-    padding:10px 20px;
-    font-size:14px;
-    text-transform:uppercase;
-}
-.errorlist {
-    color:#cc0033;
-    float:left;
-    clear:both;
-    padding-left:10px;
-}
 
 

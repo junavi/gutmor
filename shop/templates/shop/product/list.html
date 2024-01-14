@@ -6,22 +6,26 @@
 {% endblock %}
 
 {% block content %}
+
+
 {% if not category %}
   <div class="mt-5 md:mr-4 text-center sm:ml-72 sm:ml-4 rounded-md bg-gradient-to-tr from-red-100 via-blue-200 to-yellow-200 p-1 border-dashed rounded-lg dark:border-gray-700">
 <div class="bg-white p-4 text-center text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">
    Todas las categor&iacute;as
 
+
 </div>
   </div>{% endif %}
 
-{% if category.id == 1 %}
+
+{% if category.id == 1  %}
   <div class="mt-5 md:mr-4  text-center sm:ml-72  rounded-md bg-gradient-to-tr from-red-100 via-blue-200 to-yellow-200 p-1 border-dashed rounded-lg dark:border-gray-700">
 <div class="bg-white p-4 text-center text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">
    Categor&iacute;a: {{category.name}}
 
 </div>
   </div>{% endif %}
-</div>
+
 {% if category.id == 2 %}
   <div class="mt-5 md:mr-4  text-center sm:ml-72  rounded-md bg-gradient-to-tr from-red-100 via-blue-200 to-yellow-200 p-1 border-dashed rounded-lg dark:border-gray-700">
 <div class="bg-white p-4 text-center text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -29,7 +33,7 @@
 
 </div>
   </div> {% endif %}
-</div>
+
 {% if category.id == 3 %}
   <div class="mt-5 md:mr-4   text-center sm:ml-72  rounded-md bg-gradient-to-tr from-red-100 via-blue-200 to-yellow-200 p-1 border-dashed rounded-lg dark:border-gray-700">
 <div class="bg-white p-4 text-center text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -37,7 +41,7 @@
 
 </div>
   </div>{% endif %}
-</div>
+
 {% if category.id == 4 %}
   <div class="mt-5 md:mr-4  text-center sm:ml-72  rounded-md bg-gradient-to-tr from-red-100 via-blue-200 to-yellow-200 p-1 border-dashed rounded-lg dark:border-gray-700">
 <div class="bg-white p-4 text-center text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -45,7 +49,7 @@
 
 </div>
   </div>{% endif %}
-</div>
+
 {% if category.id == 5 %}
   <div class="mt-5 md:mr-4  text-center sm:ml-72  rounded-md bg-gradient-to-tr from-red-100 via-blue-200 to-yellow-200 p-1 border-dashed rounded-lg dark:border-gray-700">
 <div class="bg-white p-4 text-center text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -53,7 +57,7 @@
 
 </div>
   </div>{% endif %}
-</div>
+
 {% if category.id == 7 %}
   <div class="mt-5 md:mr-4  text-center sm:ml-72  rounded-md bg-gradient-to-tr from-red-100 via-blue-200 to-yellow-200 p-1 border-dashed rounded-lg dark:border-gray-700">
 <div class="bg-white p-4 text-center text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -61,7 +65,7 @@
 
 </div>
   </div>{% endif %}
-</div>
+
 {% if category.id == 12 %}
   <div class="mt-5 md:mr-4  text-center sm:ml-72  rounded-md bg-gradient-to-tr from-red-100 via-blue-200 to-yellow-200 p-1 border-dashed rounded-lg dark:border-gray-700">
 <div class="bg-white p-4 text-center text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -69,7 +73,7 @@
 
 </div>
   </div> {% endif %}
-</div>
+
 {% if category.id == 18 %}
   <div class="mt-5 md:mr-4  text-center sm:ml-72  rounded-md bg-gradient-to-tr from-red-100 via-blue-200 to-yellow-200 p-1 border-dashed rounded-lg dark:border-gray-700">
 <div class="bg-white p-4 text-center text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -77,7 +81,7 @@
 
 </div>
   </div>{% endif %}
-</div>
+
 {% if category.id == 14 %}
   <div class="mt-5 md:mr-4  text-center sm:ml-72  rounded-md bg-gradient-to-tr from-red-100 via-blue-200 to-yellow-200 p-1 border-dashed rounded-lg dark:border-gray-700">
 <div class="bg-white p-4 text-center text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -85,7 +89,7 @@
 
 </div>
   </div> {% endif %}
-</div>
+
 {% if category.id == 17 %}
   <div class="mt-5 md:mr-4  text-center sm:ml-72  rounded-md bg-gradient-to-tr from-red-100 via-blue-200 to-yellow-200 p-1 border-dashed rounded-lg dark:border-gray-700">
 <div class="bg-white p-4 text-center text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -93,7 +97,7 @@
 
 </div>
   </div>{% endif %}
-</div>
+
 
 
     <button data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar" aria-controls="default-sidebar" type="button" class="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">

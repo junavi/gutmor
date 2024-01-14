@@ -23,11 +23,17 @@ def contact(request):
 
     return render(request, 'shop/contact.html',data)
 
-def popular(request):
-    return render(request, 'shop/popular.html')
+def buy(request):
+    return render(request, 'shop/buy.html')
 
-def default(request):
-    return render(request, 'shop/default.html')
+def service(request):
+    return render(request, 'shop/service.html')
+
+def gallery(request):
+    return render(request, 'shop/gallery.html')
+
+def company(request):
+    return render(request, 'shop/company.html')
 
 def alimento(request):
     categories = Category.objects.order_by()
